@@ -7,8 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "NSObject+autoLogProperty.h"
+#import "StatusModel.h"
+#import "UserModel.h"
+#import "NSObject+Model.h"
 
 @interface ViewController ()
+
+@property(nonatomic,strong)NSMutableArray *dataArray;   //记录模型的数组
 
 @end
 
@@ -16,12 +22,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"status.plist" ofType:nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    
+    //log方法属性
+    NSArray *dictArr = dict[@"statuses"];
+    [[self class] createPropertyCodeWithDict:dictArr[0]];            //打印StatusModel的属性
+    [[self class] createPropertyCodeWithDict:dictArr[0][@"user"]];   //打印UserModel的属性
+    
+    NSMutableArray *statuses = [NSMutableArray array];
+    // 遍历字典数组
+    for (NSDictionary *dict in dictArr) {
+//        KVC字典转模型，调用setValueForKeyWithDictionary:方法
+//        StatusModel *statusModel = [StatusModel statusWithDict:dict];
+        
+//       runtime字典转模型，调用分类方法
+        StatusModel *statusModel = [StatusModel modelWithDict:dict];
+        [statuses addObject:statusModel];
+    }
+    NSLog(@"%@",statuses);
+    self.dataArray = statuses;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//懒加载dataArray
+- (NSMutableArray *)dataArray
+{
+    if (!_dataArray) {
+        _dataArray  = [NSMutableArray array];
+    }
+    return _dataArray;
 }
 
 @end

@@ -13,6 +13,11 @@
 		A698E9151D420AF8002CB2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A698E9131D420AF8002CB2F4 /* Main.storyboard */; };
 		A698E9171D420AF8002CB2F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A698E9161D420AF8002CB2F4 /* Assets.xcassets */; };
 		A698E91A1D420AF9002CB2F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A698E9181D420AF9002CB2F4 /* LaunchScreen.storyboard */; };
+		A698E9221D420B19002CB2F4 /* status.plist in Resources */ = {isa = PBXBuildFile; fileRef = A698E9211D420B19002CB2F4 /* status.plist */; };
+		A698E9251D420B4B002CB2F4 /* StatusModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A698E9241D420B4B002CB2F4 /* StatusModel.m */; };
+		A698E9281D420B61002CB2F4 /* NSObject+autoLogProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = A698E9271D420B61002CB2F4 /* NSObject+autoLogProperty.m */; };
+		A698E92B1D420C8B002CB2F4 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A698E92A1D420C8B002CB2F4 /* UserModel.m */; };
+		A698E92E1D42152B002CB2F4 /* NSObject+Model.m in Sources */ = {isa = PBXBuildFile; fileRef = A698E92D1D42152B002CB2F4 /* NSObject+Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,15 @@
 		A698E9161D420AF8002CB2F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A698E9191D420AF9002CB2F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A698E91B1D420AF9002CB2F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A698E9211D420B19002CB2F4 /* status.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = status.plist; sourceTree = "<group>"; };
+		A698E9231D420B4B002CB2F4 /* StatusModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusModel.h; sourceTree = "<group>"; };
+		A698E9241D420B4B002CB2F4 /* StatusModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusModel.m; sourceTree = "<group>"; };
+		A698E9261D420B61002CB2F4 /* NSObject+autoLogProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+autoLogProperty.h"; sourceTree = "<group>"; };
+		A698E9271D420B61002CB2F4 /* NSObject+autoLogProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+autoLogProperty.m"; sourceTree = "<group>"; };
+		A698E9291D420C8B002CB2F4 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		A698E92A1D420C8B002CB2F4 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		A698E92C1D42152B002CB2F4 /* NSObject+Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Model.h"; sourceTree = "<group>"; };
+		A698E92D1D42152B002CB2F4 /* NSObject+Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Model.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,8 @@
 				A698E90E1D420AF8002CB2F4 /* AppDelegate.m */,
 				A698E9101D420AF8002CB2F4 /* ViewController.h */,
 				A698E9111D420AF8002CB2F4 /* ViewController.m */,
+				A698E9301D421D52002CB2F4 /* Model */,
+				A698E92F1D421D35002CB2F4 /* Tool */,
 				A698E9131D420AF8002CB2F4 /* Main.storyboard */,
 				A698E9161D420AF8002CB2F4 /* Assets.xcassets */,
 				A698E9181D420AF9002CB2F4 /* LaunchScreen.storyboard */,
@@ -74,9 +90,32 @@
 		A698E90A1D420AF8002CB2F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A698E9211D420B19002CB2F4 /* status.plist */,
 				A698E90B1D420AF8002CB2F4 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A698E92F1D421D35002CB2F4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A698E92C1D42152B002CB2F4 /* NSObject+Model.h */,
+				A698E92D1D42152B002CB2F4 /* NSObject+Model.m */,
+				A698E9261D420B61002CB2F4 /* NSObject+autoLogProperty.h */,
+				A698E9271D420B61002CB2F4 /* NSObject+autoLogProperty.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		A698E9301D421D52002CB2F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A698E9291D420C8B002CB2F4 /* UserModel.h */,
+				A698E92A1D420C8B002CB2F4 /* UserModel.m */,
+				A698E9231D420B4B002CB2F4 /* StatusModel.h */,
+				A698E9241D420B4B002CB2F4 /* StatusModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +178,7 @@
 			files = (
 				A698E91A1D420AF9002CB2F4 /* LaunchScreen.storyboard in Resources */,
 				A698E9171D420AF8002CB2F4 /* Assets.xcassets in Resources */,
+				A698E9221D420B19002CB2F4 /* status.plist in Resources */,
 				A698E9151D420AF8002CB2F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +190,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A698E9281D420B61002CB2F4 /* NSObject+autoLogProperty.m in Sources */,
 				A698E9121D420AF8002CB2F4 /* ViewController.m in Sources */,
+				A698E92E1D42152B002CB2F4 /* NSObject+Model.m in Sources */,
+				A698E92B1D420C8B002CB2F4 /* UserModel.m in Sources */,
+				A698E9251D420B4B002CB2F4 /* StatusModel.m in Sources */,
 				A698E90F1D420AF8002CB2F4 /* AppDelegate.m in Sources */,
 				A698E90C1D420AF8002CB2F4 /* main.m in Sources */,
 			);
@@ -267,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Runtime(字典转模型)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.sharma.www-bin.Runtime-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -278,6 +323,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Runtime(字典转模型)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.sharma.www-bin.Runtime-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
